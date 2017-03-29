@@ -1,1 +1,6 @@
+baseurl: "/dips"
 theme: jekyll-theme-minimal
+
+collections:
+  digistore24:
+    output: true
