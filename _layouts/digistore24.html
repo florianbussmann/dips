@@ -3,3 +3,17 @@ layout: default
 ---
 <h3>{{ page.title }}</h3>
 <p>Preis: {{ page.price }}</p>
+<h4>Ähnliche Produkte</h4>
+<ul>
+{% assign words = page.title | split: ' ' %}
+{% for product in site.digistore24 %}
+    {% if product.url == page.url %}
+        {% continue %}
+    {% endif %}
+    {% for word in words %}
+        {% if word.size > 5 and product.title contains word %}
+            <li><a href ="{{ site.baseurl }}{{ product.url }}">{{ product.title }}</a> für {{ product.price }}</li>
+        {% endif %}
+    {% endfor %}
+ {% endfor %}
+ </ul>
