@@ -1,6 +1,31 @@
+# Site settings
 baseurl: "/dips"
+repository: florianbussmann/dips
+author: Florian Bussmann
+email: hallo@florian-bussmann.de
+twitter:
+  username: florianbussmann
+social:
+  name: Florian Bussmann
+  links:
+    - https://twitter.com/florianbussmann
+    - https://www.facebook.com/profile.php?id=100003171887760
+    - https://www.instagram.com/florianbussmann/
+    - https://www.linkedin.com/in/florianbussmann
+    - https://www.xing.com/profile/Florian_Bussmann2
+    - https://plus.google.com/108489111535281983696
+    - https://github.com/florianbussmann
 theme: jekyll-theme-minimal
 
 collections:
   digistore24:
     output: true
+
+# Build settings
+markdown: kramdown
+gems:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+exclude:
+  - Gemfile
+  - Gemfile.lock
