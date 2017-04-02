@@ -3,6 +3,7 @@ layout: default
 ---
 <h3>{{ page.title }}</h3>
 <p>Preis: {{ page.price }}</p>
+{{ content }}
 <h4>Ähnliche Produkte</h4>
 <ul>
 {% assign words = page.title | split: ' ' %}
