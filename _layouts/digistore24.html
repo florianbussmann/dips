@@ -2,7 +2,21 @@
 layout: default
 ---
 <h3>{{ page.title }}</h3>
-<p>Preis: {{ page.price }}</p>
+<span>Preis: {{ page.price }}</span>
+{% assign low = page %}
+{% for product in site.digistore24 %}
+    {% if product.url == page.url or product.title != page.title %}
+        {% continue %}
+    {% endif %}
+    {% if product.price < low.price %}
+        {% assign low = product %}
+    {% endif %}
+{% endfor %}
+{% if low.price != page.price %}
+    <p>Das Produkt ist <a href ="{{ site.baseurl }}{{ low.url }}">hier</a> günstiger erhältlich.</p>
+{% else %}
+    <br /><br />
+{% endif %}
 {{ content }}
 <h4>Ähnliche Produkte</h4>
 <ul>
@@ -16,5 +30,5 @@ layout: default
             <li><a href ="{{ site.baseurl }}{{ product.url }}">{{ product.title }}</a> für {{ product.price }}</li>
         {% endif %}
     {% endfor %}
- {% endfor %}
- </ul>
+{% endfor %}
+</ul>
