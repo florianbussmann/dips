@@ -16,6 +16,7 @@ social:
     - https://plus.google.com/108489111535281983696
     - https://github.com/florianbussmann
 theme: jekyll-theme-minimal
+google-analytics: UA-43362635-5
 
 collections:
   digistore24:

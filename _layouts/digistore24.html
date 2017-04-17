@@ -2,6 +2,9 @@
 layout: default
 ---
 {% seo %}
+{% if site.google-analytics and jekyll.environment == 'production' %}
+{% include google-analytics.html %}
+{% endif %}
 <h3>{{ page.title }}</h3>
 <span>Preis: {{ page.price }}</span>
 {% assign low = page %}
